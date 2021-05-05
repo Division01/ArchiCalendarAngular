@@ -7,21 +7,19 @@ import { map } from 'rxjs/operators';
 const endpoint = "http://localhost:8000/api/";
 
 export interface Semaine {
-  id_semaine: number;
-  title_semaine : string;
-  content_semaine: string;
-  image_semaine:string;
-  createdAt_semaine: Date;
-  taches_semaine : Taches_semaine;
+  id: number;
+  title : string;
+  content: string;
+  image:string;
+  createdAt: Date;
+  taches : Array<Taches_semaine>;
 }
 
-
-
 export interface Taches_semaine {
-  id_tache: number;
-  description_tache: string;
-  DueDate_tache: string;
-  Done_tache: boolean;
+  id: number;
+  description: string;
+  DueDate: string;
+  Done: boolean;
 }
 
 @Injectable({
@@ -32,7 +30,7 @@ export class RestService {
   constructor(private http: HttpClient) { }
 
   getSemaines(): Observable<any>{
-    console.log(this.http.get<Semaine>(endpoint + 'semaine'));
-    return this.http.get<Semaine>(endpoint + 'semaine');
+    console.log(this.http.get<Semaine>(endpoint + 'semaines'));
+    return this.http.get<Semaine>(endpoint + 'semaines');
   }
 }
