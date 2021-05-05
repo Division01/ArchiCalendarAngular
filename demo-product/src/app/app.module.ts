@@ -5,17 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { SemaineComponent } from './semaine/semaine.component' ;
+import { SemaineComponent } from './semaine/semaine.component';
+import { SemaineAddComponent } from './semaine-add/semaine-add.component' ;
 
 @NgModule({
   declarations: [
     AppComponent,
-    SemaineComponent
+    SemaineComponent,
+    SemaineAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

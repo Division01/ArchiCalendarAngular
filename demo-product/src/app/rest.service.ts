@@ -33,4 +33,8 @@ export class RestService {
     console.log(this.http.get<Semaine>(endpoint + 'semaines'));
     return this.http.get<Semaine>(endpoint + 'semaines');
   }
+
+  addSemaine(semaine: Semaine): Observable<any>{
+    return this.http.post(endpoint+ 'semaines', semaine);
+  }
 }
