@@ -3,16 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { SemaineComponent } from './semaine/semaine.component';
-import { SemaineAddComponent } from './semaine-add/semaine-add.component' ;
+import { SemaineAddComponent } from './semaine-add/semaine-add.component';
+import { SemaineEditComponent } from './semaine-edit/semaine-edit.component' ;
 
 @NgModule({
   declarations: [
     AppComponent,
     SemaineComponent,
-    SemaineAddComponent
+    SemaineAddComponent,
+    SemaineEditComponent
   ],
   imports: [
     BrowserModule,

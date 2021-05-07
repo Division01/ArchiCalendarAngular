@@ -27,4 +27,8 @@ export class SemaineComponent implements OnInit {
     )
   }
 
+  add() {
+    this.router.navigate(['/semaine-add']);
+  }
+
 }

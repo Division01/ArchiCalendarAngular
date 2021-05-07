@@ -30,11 +30,20 @@ export class RestService {
   constructor(private http: HttpClient) { }
 
   getSemaines(): Observable<any>{
-    console.log(this.http.get<Semaine>(endpoint + 'semaines'));
+    // console.log(this.http.get<Semaine>(endpoint + 'semaines'));
     return this.http.get<Semaine>(endpoint + 'semaines');
   }
 
   addSemaine(semaine: Semaine): Observable<any>{
     return this.http.post(endpoint+ 'semaines', semaine);
   }
-}
+
+  updateSemaine(semaine: Semaine): Observable<any>{
+    return this.http.put<Semaine>(endpoint+ 'semaines/' + semaine.id, semaine);
+  }
+
+  getSemaine(id: number): Observable<any>{
+    return this.http.get<Semaine>(endpoint + 'semaines/' + id );
+  }
+
+  }
