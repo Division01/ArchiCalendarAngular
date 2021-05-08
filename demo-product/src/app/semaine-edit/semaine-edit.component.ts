@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService, Semaine } from '../rest.service';
+import { RestService, Semaine, Tache } from '../rest.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -11,9 +11,11 @@ export class SemaineEditComponent implements OnInit {
 
   // semaine = {  id: 0, title : '', content: '', image:'', createdAt: new Date(), taches : [] };
   semaine : Semaine ;
+  taches : any ;
 
   constructor(public rest: RestService, private route: ActivatedRoute, private router: Router) { 
     this.semaine = {  id: 0, title : '', content: '', image:'', createdAt: new Date(), taches : [] };
+    this.taches = { id: 0, description: '', DueDate: '' , Done: false};
   }
 
   
@@ -24,6 +26,7 @@ export class SemaineEditComponent implements OnInit {
         this.semaine = data;
       }
     )
+    this.taches = this.semaine.taches ;
   }
 
   updateSemaine(){

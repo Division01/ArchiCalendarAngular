@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { RestService, Semaine, Taches_semaine } from '../rest.service' ;
+import { RestService, Semaine, Tache } from '../rest.service' ;
 import { Router } from '@angular/router';
 
 @Component({

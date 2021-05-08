@@ -12,13 +12,13 @@ export interface Semaine {
   content: string;
   image:string;
   createdAt: Date;
-  taches : Array<Taches_semaine>;
+  taches : Array<Tache>;
 }
 
-export interface Taches_semaine {
+export interface Tache {
   id: number;
   description: string;
-  DueDate: string;
+  DueDate: Date;
   Done: boolean;
 }
 
@@ -44,6 +44,18 @@ export class RestService {
 
   getSemaine(id: number): Observable<any>{
     return this.http.get<Semaine>(endpoint + 'semaines/' + id );
+  }
+
+  getTache(id: number): Observable<any>{
+    return this.http.get<Tache>(endpoint + 'tache/' + id );
+  }
+
+  updateTache(tache: Tache): Observable<any>{
+    return this.http.put<Tache>(endpoint+ 'tache/' + tache.id, tache);
+  }
+
+  addTache(id: number, tache: Tache): Observable<any>{
+    return this.http.post(endpoint+ 'tache/' + id, tache);
   }
 
   }

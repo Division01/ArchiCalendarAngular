@@ -1,11 +1,19 @@
-<h2> Liste des semaines</h2>
-<div>
-    <button (click)='add()'>Add</button>
-</div>
-<ul>
-    <li *ngFor="let s of semaines">
-        {{ s.title }}
-        <button routerLink="/semaine-edit/{{s.id}}">Edit</button>
-    </li>
+<div style="flex: 1;">
 
-</ul>
+    <h2 style="flex: 1; display: flex; "> Liste des semaines</h2>
+
+    <ul style="flex: 1;">
+        <li *ngFor="let s of semaines" style="flex: 1; ">
+            <div style="flex: 1; flex-direction:row; display:flex">
+                <p style="flex: 9; flex-direction:row">{{ s.title }}</p>
+                <button routerLink="/semaine-edit/{{s.id}}" style="flex: 1;  display:flex; align-items: center;
+                justify-content: center;">Edit</button>
+            </div>
+        </li>
+    </ul>
+
+    <div style="flex: 1; ">
+        <button (click)='add()' style='flex:1;align-items: center; justify-content: center;'>Add a new week</button>
+    </div>
+
+</div>

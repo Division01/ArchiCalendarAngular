@@ -1,9 +1,34 @@
-<div>
-    <h2> Semaine edit</h2>
-    <input type='text' [(ngModel)]="semaine.title" placeholder = "Title (min 10 charactères)"><br>
-    <input type='text' [(ngModel)]="semaine.content" placeholder = "Description (min 10 charac)"><br>
-    <!-- <input type='text' [(ngModel)]="semaine.image" placeholder = "URL de votre image"><br> -->
-    <!-- <input type='text' [(ngModel)]="semaine.taches" placeholder = "Taches"><br> -->
+<div style='flex:1; display: flex;flex-direction: column;'>
+    <h2 style='flex:1; display: flex;'> Semaine edit</h2>
 
-    <button (click)= "updateSemaine()"> Save </button>
+    <input type='text'  [(ngModel)]="semaine.title" placeholder = "Title (min 10 charactères)" 
+    style='flex:1; display: flex;'><br>
+
+    <input type='text' [(ngModel)]="semaine.content" placeholder = "Description (min 10 charactères)" 
+    style='flex:4; display: flex;'><br>
+
+    <!-- <input type='text' [(ngModel)]="semaine.image" placeholder = "URL de votre image" 
+    style='flex:1; display: flex;'><br>  -->
+
+    <ul style="flex: 1;">
+        <h2 style='flex:1; display: flex;'>Liste des tâches </h2>
+        <li *ngFor="let t of semaine.taches" style="flex: 1; ">
+
+            <div style="flex: 1; flex-direction:row; display:flex">
+                <p style="flex: 9; flex-direction:row">{{ t.description }}</p>
+                <p style="flex: 1; flex-direction:row">Tâche pour le : </p>
+                <p style="flex: 1; flex-direction:row">{{ t.DueDate | date }}</p>
+                <p style="flex: 1; flex-direction:row">Tâche faite : </p>
+                <p style="flex: 1; flex-direction:row">{{ t.Done }}</p>
+                <button routerLink="/tache-edit/{{t.id}}" style="flex: 1;  display:flex; align-items: center;
+                justify-content: center;">Edit</button>
+            </div>
+
+        </li>
+    </ul>
+
+    <button routerLink="/tache-add/{{semaine.id}}" style="flex: 1;  display:flex; align-items: center;
+    justify-content: center;">Nouvelle tâche</button>
+    
+    <button (click)= "updateSemaine()" style='flex:1; align-items: center; justify-content: center; display: flex;'> Save </button>
 </div>

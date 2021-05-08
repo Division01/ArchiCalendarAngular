@@ -8,14 +8,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SemaineComponent } from './semaine/semaine.component';
 import { SemaineAddComponent } from './semaine-add/semaine-add.component';
-import { SemaineEditComponent } from './semaine-edit/semaine-edit.component' ;
+import { SemaineEditComponent } from './semaine-edit/semaine-edit.component';
+import { TacheEditComponent } from './tache-edit/tache-edit.component';
+import { TacheAddComponent } from './tache-add/tache-add.component' ;
 
 @NgModule({
   declarations: [
     AppComponent,
     SemaineComponent,
     SemaineAddComponent,
-    SemaineEditComponent
+    SemaineEditComponent,
+    TacheEditComponent,
+    TacheAddComponent
   ],
   imports: [
     BrowserModule,
