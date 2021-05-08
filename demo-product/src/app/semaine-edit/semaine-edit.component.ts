@@ -40,4 +40,22 @@ export class SemaineEditComponent implements OnInit {
     )
   }
 
+  deleteTache(id : any){
+    this.rest.deleteTache(id).subscribe(
+      (result) => {
+        console.log("tache n° " + id + " supprimée")
+        this.router.navigate(['/semaine-edit/'+ this.route.snapshot.params.id]);
+      }
+    )
+  }
+
+  deleteSemaine(id:any){
+    this.rest.deleteSemaine(id).subscribe(
+      (result) => {
+        console.log("semaine n° " + id + " supprimée")
+        this.router.navigate(['/semaines']);
+      }
+    )
+  }
+
 }

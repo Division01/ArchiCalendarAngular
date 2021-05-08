@@ -1,5 +1,5 @@
 <div style='flex:1; display: flex;flex-direction: column;'>
-    <h2 style='flex:1; display: flex;'> Semaine edit</h2>
+    <h2 style='flex:1; display: flex;'> Editer la semaine </h2>
 
     <input type='text'  [(ngModel)]="semaine.title" placeholder = "Title (min 10 charactères)" 
     style='flex:1; display: flex;'><br>
@@ -19,9 +19,12 @@
                 <p style="flex: 1; flex-direction:row">Tâche pour le : </p>
                 <p style="flex: 1; flex-direction:row">{{ t.DueDate | date }}</p>
                 <p style="flex: 1; flex-direction:row">Tâche faite : </p>
-                <p style="flex: 1; flex-direction:row">{{ t.Done }}</p>
+                <p style="flex: 1; flex-direction:row">{{ t.Done }} </p>
+                
                 <button routerLink="/tache-edit/{{t.id}}" style="flex: 1;  display:flex; align-items: center;
-                justify-content: center;">Edit</button>
+                justify-content: center;">Editer</button>
+
+                <button (click)= "deleteTache(t.id)" style='flex:1; align-items: center; justify-content: center; display: flex; background-color:red'> Supprimer </button>
             </div>
 
         </li>
@@ -30,5 +33,7 @@
     <button routerLink="/tache-add/{{semaine.id}}" style="flex: 1;  display:flex; align-items: center;
     justify-content: center;">Nouvelle tâche</button>
     
-    <button (click)= "updateSemaine()" style='flex:1; align-items: center; justify-content: center; display: flex;'> Save </button>
+    <button (click)= "updateSemaine()" style='flex:1; align-items: center; justify-content: center; display: flex;'> Sauvegarder titre ou description </button>
+    <button (click)= "deleteSemaine(semaine.id)" style='flex:1; align-items: center; justify-content: center; display: flex; background-color:red'> Supprimer la semaine {{ semaine.id }} </button>
+    <button routerLink="/semaines" style="flex: 1;  display:flex; align-items: center;justify-content: center; background-color: blue;">Retourner aux semaines</button>
 </div>

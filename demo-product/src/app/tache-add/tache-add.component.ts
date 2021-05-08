@@ -19,7 +19,7 @@ export class TacheAddComponent implements OnInit {
 
   addTache(){
     this.rest.addTache(this.route.snapshot.params.id, this.tache ).subscribe(
-      (result) => {this.router.navigate(['/semaines']);}
+      (result) => {this.router.navigate(['/semaine-edit/'+ this.route.snapshot.params.id]);}
     )
   }
 

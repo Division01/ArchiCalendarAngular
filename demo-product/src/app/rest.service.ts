@@ -58,4 +58,12 @@ export class RestService {
     return this.http.post(endpoint+ 'tache/' + id, tache);
   }
 
+  deleteSemaine(id: number): Observable<any>{
+    return this.http.delete(endpoint+ 'semaines/' + id);
+  }
+
+  deleteTache(id: number): Observable<any>{
+    return this.http.delete(endpoint+ 'tache/' + id);
+  }
+
   }
