@@ -19,5 +19,5 @@
     </div>
 
     <!-- Bouton pour envoyer l'update -->
-    <button (click)= "updateTache()" style='flex:1; align-items: center; justify-content: center; display: flex;'> Save </button>
+    <button (click)= "updateTache()" [disabled]="(tache.description.length < 3 || tache.DueDate.length === 0)" style='flex:1; align-items: center; justify-content: center; display: flex;'> Save </button>
 </div>

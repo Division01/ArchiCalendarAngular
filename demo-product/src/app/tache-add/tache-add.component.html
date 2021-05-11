@@ -3,11 +3,20 @@
 
 
     <!-- Description de la tâche -->
-    <input type='text' [(ngModel)]="tache.description" placeholder = "Description (min 10 charactères)" 
+    <p style='flex:1; display: flex;'> Le bouton Save sera grisé si moins de 3 charactères </p>
+    <input type='text' 
+    placeholder = "Description (min 10 charactères)" 
+    name="description"
+    [(ngModel)]="tache.description" 
+    #description="ngModel" required
     style='flex:4; display: flex;'><br>
 
+    <p style='flex:1; display: flex;'> La date de la tâche sera pas défaut mise à aujourd'hui si non modifiée</p>
     <!-- Date de la tâche (le formattage doit être amélioré car par modifiable là) -->
-    <input type='date'  [(ngModel)]="tache.DueDate"
+    <input type='date'  
+    [(ngModel)]="tache.DueDate"
+    name="date"
+    #date="ngModel" required
     style='flex:1; display: flex;'><br>
 
 
@@ -18,5 +27,5 @@
         <p style='flex:15; display: flex;'> </p>
     </div>
     
-    <button (click)= "addTache()" style='flex:1; align-items: center; justify-content: center; display: flex;'> Save </button>
+    <button (click)= "addTache()" [disabled]="(tache.description.length < 3 )" style='flex:1; align-items: center; justify-content: center; display: flex;'> Save </button>
 </div>
