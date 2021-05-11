@@ -1,5 +1,5 @@
 <div style='flex:1; display: flex;flex-direction: column;'>
-    <h2 style='flex:1; display: flex;'> Tache edit</h2>
+    <h2 style='flex:1; display: flex;'> Nouvelle tache</h2>
 
 
     <!-- Description de la tâche -->
@@ -7,8 +7,9 @@
     style='flex:4; display: flex;'><br>
 
     <!-- Date de la tâche (le formattage doit être amélioré car par modifiable là) -->
-    <input type='datetime'  [(ngModel)]="tache.DueDate" 
+    <input type='date'  [(ngModel)]="tache.DueDate"
     style='flex:1; display: flex;'><br>
+
 
     <!-- Checkbox faite ou pas -->
     <div style='flex:1; display: flex; align-items: center;'>

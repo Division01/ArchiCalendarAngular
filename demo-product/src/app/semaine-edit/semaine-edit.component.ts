@@ -44,7 +44,7 @@ export class SemaineEditComponent implements OnInit {
     this.rest.deleteTache(id).subscribe(
       (result) => {
         console.log("tache n° " + id + " supprimée")
-        this.router.navigate(['/semaine-edit/'+ this.route.snapshot.params.id]);
+        window.location.reload();
       }
     )
   }
